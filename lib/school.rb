@@ -1,25 +1,34 @@
 class School
-  attr_accessor :roster, :name, :grade
+  attr_accessor :school, :roster
   
-  def initialize(model)
-    @roster = []
-    @name = name
-    @grade = grade
+  def initialize(school)
+    @school = school
+    @roster = {}
   end
   
-  def add_student(name, grade)
-    roster << name(grade)
+  def add_student(student, grade)
+    if roster[age] == nil
+      @roster[age] = []
+    end
+    @roster[age] << student.to_s
+    @roster
   end
   
   def grade(grade)
-    @grade = grade
+    @roster[grade]
+  end
+  
+  def sort
+    i = 0
+    while i < (@roster.keys).max
+      if roster[i] != nil
+        @roster[i].sort!
+      end
+      i += 1
+    end
+    @roster
   end
 end
-
-school = School.new("Bayside High School")
-school.add_student("Zach Morris", 9)
-school.grade(9)
-school.roster
 
 
 
